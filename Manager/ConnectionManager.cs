@@ -39,13 +39,12 @@ namespace EngineDestroyer {
             }
         }
 
-        //lista de sockets 
+        // Lista de sockets.
         private List<Connection> clients;
 
-        //indica se o loop está em execução
+        // Indica se o loop está em execução ou não.
         private bool running;
-
-        //processo paralelo
+    
         private Thread t1, t2;
 
         /// <summary>
@@ -80,12 +79,12 @@ namespace EngineDestroyer {
         public void Connect() {
             running = true;
 
-            //cria as conexões
+            // Cria as conexões.
             t1 = new Thread(CreateConnection);
             t1.Start();
 
-            //verifica o estado do socket.
-            t2 = new Thread(CheckSocketState);
+            // Verifica o estado do socket.
+            t2 = new Thread(CheckConnectionState);
             t2.Start();
         }
 
@@ -118,21 +117,22 @@ namespace EngineDestroyer {
                     Thread.Sleep(ConnectionTime);
                 }
 
-                //não permite que use muito o CPU
-                Thread.Sleep(50);
+                // Faz a thread dormir que não consuma muito processamento.
+                Thread.Sleep(10);
             } 
         }
 
         /// <summary>
         /// Verifica o estado atual da conexão.
         /// </summary>
-        private void CheckSocketState() {
+        private void CheckConnectionState() {
             while (running) {
+
                 for (var n = 0; n < MaxConnection; n++) {
                     clients[n].CheckSocketState();
                 }
 
-                Thread.Sleep(5000);
+                Thread.Sleep(2000);
             }
         }
 

@@ -11,6 +11,9 @@ namespace EngineDestroyer {
         FrmAbout about;
         FrmAccount account;
 
+        /// <summary>
+        /// Indica que o formulário está sendo fechado.
+        /// </summary>
         bool closing = false;
 
         public FrmMain() {
@@ -19,27 +22,29 @@ namespace EngineDestroyer {
             CheckForIllegalCrossThreadCalls = false;
         }
 
-        private void btn_start_Click(object sender, EventArgs e) {
-            var text = btn_start.Text;
+        private void ButtonStart_Click(object sender, EventArgs e) {
+            var text = ButtonStart.Text;
 
             if (text == "Start") {
-                var ip = txt_ip.Text.Trim();
-                var port = Convert.ToInt32(txt_port.Text);
-                var max = Convert.ToInt32(txt_max.Text.Trim());
-                var sleep = Convert.ToInt32(txt_sleep.Text.Trim());
+                var ip = TxtIp.Text.Trim();
+                var port = Convert.ToInt32(TxtPort.Text);
+                var maxConnection = Convert.ToInt32(TxtMaxConnection.Text.Trim());
+                var sleep = Convert.ToInt32(TxtSleepTime.Text.Trim());
 
-                Program.Connections = new ConnectionManager(max);
-                Program.Connections.IpAddress = ip;
-                Program.Connections.Port = port;
-                Program.Connections.ConnectionTime = sleep;
+                Program.Connections = new ConnectionManager(maxConnection) {
+                    IpAddress = ip,
+                    Port = port,
+                    ConnectionTime = sleep
+                };
+
                 Program.Connections.Connect();
 
-                btn_start.Text = "Stop";
+                ButtonStart.Text = "Stop";
                 WriteLog("Connecting ...", Color.Black);
             }
             else {
                 Program.Connections.Disconnect();
-                btn_start.Text = "Start";
+                ButtonStart.Text = "Start";
                 WriteLog("Stopped ...", Color.Black);
             }
         }
@@ -59,8 +64,6 @@ namespace EngineDestroyer {
             if (Program.Connections != null) {
                 Program.Connections.Disconnect();
             }
-
-            Environment.Exit(0);
         }
 
         /// <summary>
@@ -84,7 +87,7 @@ namespace EngineDestroyer {
         }
 
         #region Menu Item
-        private void exit_item_Click(object sender, EventArgs e) {
+        private void MenuExit_Click(object sender, EventArgs e) {
             if (Program.Connections != null) {
                 Program.Connections.Disconnect();
             }
@@ -94,7 +97,7 @@ namespace EngineDestroyer {
             Application.Exit();
         }
 
-        private void message_item_Click(object sender, EventArgs e) {
+        private void MenuMessages_Click(object sender, EventArgs e) {
             if (chat.IsDisposed) {
                 chat = new FrmChat();
             }
@@ -102,7 +105,7 @@ namespace EngineDestroyer {
             chat.Show();
         }
 
-        private void overflow_item_Click(object sender, EventArgs e) {
+        private void MenuOverflow_Click(object sender, EventArgs e) {
             if (overflow.IsDisposed) {
                 overflow = new FrmOverflow();
             }
@@ -110,7 +113,7 @@ namespace EngineDestroyer {
             overflow.Show();
         }
 
-        private void about_item_Click(object sender, EventArgs e) {
+        private void MenuAbout_Click(object sender, EventArgs e) {
             if (about.IsDisposed) {
                 about = new FrmAbout();
             }
@@ -118,7 +121,7 @@ namespace EngineDestroyer {
             about.ShowDialog();
         }
 
-        private void rage_item_Click(object sender, EventArgs e) {
+        private void MenuRageMode_Click(object sender, EventArgs e) {
             if (rage.IsDisposed) {
                 rage = new FrmRage();
             }
@@ -126,7 +129,7 @@ namespace EngineDestroyer {
             rage.Show();
         }
 
-        private void custom_item_Click(object sender, EventArgs e) {
+        private void MenuCustom_Click(object sender, EventArgs e) {
             if (custom.IsDisposed) {
                 custom = new FrmCustom();
             }
@@ -134,7 +137,7 @@ namespace EngineDestroyer {
             custom.Show();
         }
 
-        private void account_item_Click(object sender, EventArgs e) {
+        private void MenuAccount_Click(object sender, EventArgs e) {
             if (account.IsDisposed) {
                 account = new FrmAccount();
             }
@@ -143,26 +146,15 @@ namespace EngineDestroyer {
         }
         #endregion
 
-        #region Permite apenas números no textbox
-        private void txt_port_KeyPress(object sender, KeyPressEventArgs e) {
+        /// <summary>
+        /// Permite apenas números no textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e) {
             if (!char.IsDigit(e.KeyChar)) {
                 e.Handled = true;
             }
         }
-
-        private void txt_max_KeyPress(object sender, KeyPressEventArgs e) {
-            if (!char.IsDigit(e.KeyChar)) {
-                e.Handled = true;
-            }
-        }
-
-        private void txt_sleep_KeyPress(object sender, KeyPressEventArgs e) {
-            if (!char.IsDigit(e.KeyChar)) {
-                e.Handled = true;
-            }
-        }
-        #endregion
-
-
     }
 }

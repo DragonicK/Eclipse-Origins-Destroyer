@@ -70,3 +70,18 @@ C:\Users\julio\Desktop\Engine Destroyer\obj\Debug\EngineDestroyer.exe
 C:\Users\julio\Desktop\Engine Destroyer\obj\Debug\EngineDestroyer.pdb
 D:\Programming Language\Project\Engine Destroyer\obj\Debug\EngineDestroyer.FrmAccount.resources
 C:\Users\julio\Desktop\Engine Destroyer\obj\Debug\EngineDestroyer.FrmAccount.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Debug\EngineDestroyer.exe.config
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Debug\EngineDestroyer.exe
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Debug\EngineDestroyer.pdb
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmAbout.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmAccount.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmCustom.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmMain.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmChat.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmOverflow.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.FrmRage.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.Properties.Resources.resources
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.csproj.GenerateResource.Cache
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.csproj.CoreCompileInputs.cache
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.exe
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Debug\EngineDestroyer.pdb

@@ -2,11 +2,11 @@
 using System.Net.Sockets;
 
 namespace EngineDestroyer {
-    public class Connection {
-        private Socket socket;
+    public sealed class Connection {
+        public Action<ConnectionArgs> StatusChanged;
 
         /// <summary>
-        /// Obtem o estado da conexão
+        /// Exibe o estado da conexão.
         /// </summary>
         public bool Connected { get; private set; } = false;
         
@@ -15,16 +15,17 @@ namespace EngineDestroyer {
         /// </summary>
         public int Index { get; set; }
 
-        public Action<ConnectionArgs> StatusChanged;
-
         /// <summary>
         /// Guarda o último status do socket.
         /// </summary>
         private bool lastStatus = false;
 
+        private Socket socket;
+
         public Connection() {
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Blocking = false;
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp) {
+                Blocking = false
+            };
         }
   
         public void Connect(string ip, int port) {        
@@ -44,7 +45,6 @@ namespace EngineDestroyer {
         /// </summary>
         /// <param name="buffer"></param>
         public void Send(byte[] buffer) {
-            
             try {
                 socket.Send(buffer);
             }
@@ -82,7 +82,7 @@ namespace EngineDestroyer {
 
             Connected = result;
 
-            //se houver alguma alteração, chama o evento
+            // Se houver alguma alteração, chama o evento.
             ChangeStatus(result);
         }
 
@@ -94,7 +94,9 @@ namespace EngineDestroyer {
             byte[] buffer = new byte[512];
           
             if (Connected) {
-                if (socket.Available <= 0) { return new byte[1]; }
+                if (socket.Available <= 0) {
+                    return new byte[1];
+                }
 
                 try {
                     socket.Receive(buffer);
@@ -107,9 +109,15 @@ namespace EngineDestroyer {
             return buffer;
         }
 
+        /// <summary>
+        /// Altera o estado da conexão e chama o evento.
+        /// </summary>
+        /// <param name="status"></param>
         private void ChangeStatus(bool status) {
             if (lastStatus != status) {
+
                 lastStatus = status;
+
                 StatusChanged?.Invoke(new ConnectionArgs(Index, status));
             }
         }

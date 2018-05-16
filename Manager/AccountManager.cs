@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace EngineDestroyer {
-    /*   O nome de usuário e a senha são os mesmos.  */ 
-        
+namespace EngineDestroyer {        
     /// <summary>
     /// Gera e armazena os usuários que foram usados.
     /// </summary>
@@ -12,7 +9,7 @@ namespace EngineDestroyer {
         /// <summary>
         /// Lista de usuários que já foram usados e registrados.
         /// </summary>
-        //private static List<string> accounts = new List<string>();
+        /// private static List<string> accounts = new List<string>();
 
         /// <summary>
         /// Gera um login e uma senha.
@@ -21,13 +18,8 @@ namespace EngineDestroyer {
         public static string GenerateAccount() {
             var user = Guid.NewGuid().ToString();
 
-            //retira o hifen e pega apenas 10 caracteres
-            user = Regex.Replace(user, "-", "").Substring(0, 10);
-
-            //adiciona o usuário na lista
-            //accounts.Add(user);
-
-            return user;
+            // Retira o hífen e pega apenas 10 caracteres.
+            return Regex.Replace(user, "-", "").Substring(0, 10); 
         }
     }
 }
