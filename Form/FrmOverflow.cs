@@ -8,7 +8,6 @@ namespace EngineDestroyer {
     public partial class FrmOverflow : Form {
         public FrmOverflow() {
             InitializeComponent();
-
         }
 
         /// <summary>

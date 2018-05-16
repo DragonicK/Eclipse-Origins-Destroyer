@@ -309,7 +309,7 @@ namespace EngineDestroyer {
             Array.Copy(buffer, 0, packet, head, buffer.Length);
 
             // Hotbar.
-            head += 8;
+            head += 4;
              
             buffer = BitConverter.GetBytes(int.MaxValue);
             Array.Copy(buffer, 0, packet, head, buffer.Length);

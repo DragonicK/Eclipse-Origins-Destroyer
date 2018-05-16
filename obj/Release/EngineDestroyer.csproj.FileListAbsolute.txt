@@ -45,7 +45,6 @@ D:\Programming Language\Project\Engine Destroyer\obj\Release\EngineDestroyer.csp
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Release\EngineDestroyer.exe.config
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Release\EngineDestroyer.exe
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\bin\Release\EngineDestroyer.pdb
-C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.csprojResolveAssemblyReference.cache
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.FrmAbout.resources
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.FrmAccount.resources
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.FrmCustom.resources
@@ -58,3 +57,4 @@ C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDest
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.csproj.CoreCompileInputs.cache
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.exe
 C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.pdb
+C:\Users\julio\Documents\GitHub\Eclipse-Origins-Destroyer\obj\Release\EngineDestroyer.csprojResolveAssemblyReference.cache
