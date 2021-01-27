@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EngineDestroyer</RootNamespace>
     <AssemblyName>EngineDestroyer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,76 +49,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ConnectionArgs.cs" />
-    <Compile Include="Form\FrmAccount.cs">
+    <Compile Include="Forms\Data.cs" />
+    <Compile Include="Forms\DataType.cs" />
+    <Compile Include="Handler\ConnectionHandler.cs" />
+    <Compile Include="Handler\GlobalHandler.cs" />
+    <Compile Include="Network\ByteBuffer.cs" />
+    <Compile Include="Network\ConnectionArgs.cs" />
+    <Compile Include="Forms\FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmAccount.Designer.cs">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
+    <Compile Include="Forms\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\AccountManager.cs" />
-    <Compile Include="Manager\ConnectionManager.cs" />
-    <Compile Include="Classes\Packet.cs" />
-    <Compile Include="Form\FrmAbout.cs">
+    <Compile Include="Forms\FormCustom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmAbout.Designer.cs">
-      <DependentUpon>FrmAbout.cs</DependentUpon>
+    <Compile Include="Forms\FormCustom.Designer.cs">
+      <DependentUpon>FormCustom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmCustom.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmCustom.Designer.cs">
-      <DependentUpon>FrmCustom.cs</DependentUpon>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMain.cs">
+    <Compile Include="Network\ClientHeader.cs" />
+    <Compile Include="Forms\FormChat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="Forms\FormChat.Designer.cs">
+      <DependentUpon>FormChat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ClientPacket.cs" />
-    <Compile Include="Form\FrmChat.cs">
+    <Compile Include="Forms\FormOverflow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmChat.Designer.cs">
-      <DependentUpon>FrmChat.cs</DependentUpon>
+    <Compile Include="Forms\FormOverflow.Designer.cs">
+      <DependentUpon>FormOverflow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmOverflow.cs">
+    <Compile Include="Forms\FormRandom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmOverflow.Designer.cs">
-      <DependentUpon>FrmOverflow.cs</DependentUpon>
+    <Compile Include="Forms\FormRandom.Designer.cs">
+      <DependentUpon>FormRandom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmRage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmRage.Designer.cs">
-      <DependentUpon>FrmRage.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Network\ClientPacket.cs" />
+    <Compile Include="Network\CpSayMessage.cs" />
+    <Compile Include="Network\Packets\CpChangeBankSlotOverflow.cs" />
+    <Compile Include="Network\Packets\CpCreateAccount.cs" />
+    <Compile Include="Network\Packets\CpCustom.cs" />
+    <Compile Include="Network\Packets\CpEmoteMessage.cs" />
+    <Compile Include="Network\Packets\CpHotbarChangeOverflow.cs" />
+    <Compile Include="Network\Packets\CpHotbarUseOverflow.cs" />
+    <Compile Include="Network\Packets\CpInfoRequestOverflow.cs" />
+    <Compile Include="Network\Packets\CpLogin.cs" />
+    <Compile Include="Network\Packets\CpBroadcastMessage.cs" />
+    <Compile Include="Network\Packets\CpPlayerMessage.cs" />
+    <Compile Include="Network\Packets\CpRandomOverflow.cs" />
+    <Compile Include="Network\Packets\CpSwapInventoryOverflow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Connection.cs" />
-    <EmbeddedResource Include="Form\FrmAbout.resx">
-      <DependentUpon>FrmAbout.cs</DependentUpon>
+    <Compile Include="Network\Connection.cs" />
+    <EmbeddedResource Include="Forms\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmAccount.resx">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCustom.resx">
+      <DependentUpon>FormCustom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmCustom.resx">
-      <DependentUpon>FrmCustom.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormChat.resx">
+      <DependentUpon>FormChat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmChat.resx">
-      <DependentUpon>FrmChat.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormOverflow.resx">
+      <DependentUpon>FormOverflow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmOverflow.resx">
-      <DependentUpon>FrmOverflow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmRage.resx">
-      <DependentUpon>FrmRage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormRandom.resx">
+      <DependentUpon>FormRandom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
